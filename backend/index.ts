@@ -5,6 +5,11 @@ import express, { Express, Request, Response } from "express";
 import { sandbox } from "./src/controllers/sandbox.controller";
 import { initObservability } from "./src/observability";
 import chatRouter from "./src/routes/chat.route";
+const csvFilePath ='./data/dummy.csv';
+import csv from "csvtojson";
+import fs from "fs";
+const data = fs.readFileSync("./data/dummy.json", "utf8");
+const jsonFile = JSON.parse(data)
 
 const app: Express = express();
 const port = parseInt(process.env.PORT || "8000");
@@ -14,6 +19,20 @@ const isDevelopment = !env || env === "development";
 const prodCorsOrigin = process.env["PROD_CORS_ORIGIN"];
 
 initObservability();
+
+csv().fromFile(csvFilePath).then((json) => {
+  console.log(json);
+  fs.writeFile("./data/dummy.json", JSON.stringify(json, null, 2), (err: NodeJS.ErrnoException | null) => {
+    if (err) {
+      console.error('Error writing file:', err);
+    }
+  });
+});
+
+app.get("/json", (req, res) => {
+  res.send(jsonFile);
+})
+
 
 app.use(express.json({ limit: "50mb" }));
 

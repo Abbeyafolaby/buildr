@@ -16,20 +16,21 @@
     "generate": "tsx src\\controllers\\engine\\generate.ts"
   },
   "dependencies": {
+    "@apidevtools/swagger-parser": "^10.1.0",
+    "@e2b/code-interpreter": "0.0.9-beta.3",
     "@llamaindex/core": "^0.2.6",
     "ai": "3.3.42",
+    "ajv": "^8.12.0",
     "cors": "^2.8.5",
+    "csvtojson": "^2.0.10",
     "dotenv": "^16.3.1",
     "duck-duck-scrape": "^2.2.5",
     "express": "^4.18.2",
-    "llamaindex": "0.6.22",
-    "pdf2json": "3.0.5",
-    "ajv": "^8.12.0",
-    "@e2b/code-interpreter": "0.0.9-beta.3",
-    "got": "^14.4.1",
-    "@apidevtools/swagger-parser": "^10.1.0",
     "formdata-node": "^6.0.3",
-    "marked": "^14.1.2"
+    "got": "^14.4.1",
+    "llamaindex": "0.6.22",
+    "marked": "^14.1.2",
+    "pdf2json": "3.0.5"
   },
   "devDependencies": {
     "@types/cors": "^2.8.16",
@@ -41,8 +42,8 @@
     "nodemon": "^3.0.1",
     "prettier": "^3.2.5",
     "prettier-plugin-organize-imports": "^3.2.4",
-    "tsx": "^4.7.2",
     "tsup": "8.1.0",
+    "tsx": "^4.7.2",
     "typescript": "^5.3.2"
   }
 }
