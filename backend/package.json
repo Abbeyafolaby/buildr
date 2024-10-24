@@ -19,6 +19,7 @@
     "@apidevtools/swagger-parser": "^10.1.0",
     "@e2b/code-interpreter": "0.0.9-beta.3",
     "@llamaindex/core": "^0.2.6",
+    "@pinecone-database/pinecone": "^4.0.0",
     "ai": "3.3.42",
     "ajv": "^8.12.0",
     "cors": "^2.8.5",

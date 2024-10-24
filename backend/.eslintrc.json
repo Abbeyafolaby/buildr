@@ -5,6 +5,7 @@
     "prefer-const": "error"
   },
   "parserOptions": {
-    "sourceType": "module"
+    "sourceType": "module",
+    "ecmaVersion": 2020
   }
 }
